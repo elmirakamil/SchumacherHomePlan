@@ -37,7 +37,9 @@ public class HousePlanVirtualTourStepDefinitions {
 
     @And("user clicks any house in the page")
     public void userClicksAnyHouseInThePage(){
-          housePlanPage.clickSantaBarbaraHouse();
+        housePlanPage.closeLocationPopUp();
+
+        housePlanPage.clickSantaBarbaraHouse();
         BrowserUtils.wait(2);
 
     }

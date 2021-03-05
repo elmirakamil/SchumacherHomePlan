@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class HomePage {
+public class HomePage extends BasePage{
 
     @FindBy(xpath = "(//li[@class='has-mega'])[1]")
     protected WebElement housePlans;
