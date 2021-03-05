@@ -7,13 +7,13 @@ import org.openqa.selenium.support.FindBy;
 public class SantaBarbaraHousePage extends BasePage {
 
     @FindBy( xpath = "//h2[.='Virtual Tours']")
-    private WebElement VirtualTours;
+    protected WebElement VirtualTours;
 
     @FindBy( xpath = "//h5[.='Self-Guided Tour']")
-    private WebElement selfGuidedTour;
+    protected WebElement selfGuidedTour;
 
     @FindBy(xpath = "//h3[.='Self-Guided Tour']")
-    private WebElement selfGuidedTourDashboard;
+    protected WebElement selfGuidedTourDashboard;
 
     public void clickSelfGuidedTour(){
         BrowserUtils.clickOnElement(selfGuidedTour);

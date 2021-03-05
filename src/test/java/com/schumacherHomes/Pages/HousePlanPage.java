@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class HousePlanPage extends BasePage{
 
     @FindBy(xpath = "//a[@href='https://www.schumacherhomes.com/house-plans/santa-barbara/']")
-    private WebElement santaBarbaraHouse;
+    protected WebElement santaBarbaraHouse;
 
     public void clickSantaBarbaraHouse(){
         BrowserUtils.clickOnElement(santaBarbaraHouse);

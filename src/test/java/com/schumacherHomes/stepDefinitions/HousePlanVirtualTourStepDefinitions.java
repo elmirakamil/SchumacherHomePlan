@@ -3,6 +3,7 @@ package com.schumacherHomes.stepDefinitions;
 import com.schumacherHomes.Pages.HomePage;
 import com.schumacherHomes.Pages.HousePlanPage;
 import com.schumacherHomes.Pages.SantaBarbaraHousePage;
+import com.schumacherHomes.utilities.BrowserUtils;
 import com.schumacherHomes.utilities.ConfigurationReader;
 import com.schumacherHomes.utilities.Driver;
 import io.cucumber.java.en.*;
@@ -23,19 +24,21 @@ public class HousePlanVirtualTourStepDefinitions {
 
         System.out.println("::: Starting Automation:::");
         Driver.getDriver().manage().window().maximize();
-        Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
     }
 
     @When("user clicks the HOUSE PLANS navigation tab")
-    public void userClicksTheHOUSEPLANSNavigationTab() {
+    public void userClicksTheHOUSEPLANSNavigationTab()  {
         homePage.clickOnHousePlanTab();
+        BrowserUtils.wait(2);
     }
 
     @And("user clicks any house in the page")
-    public void userClicksAnyHouseInThePage() {
+    public void userClicksAnyHouseInThePage(){
           housePlanPage.clickSantaBarbaraHouse();
+        BrowserUtils.wait(2);
 
     }
 
@@ -44,7 +47,9 @@ public class HousePlanVirtualTourStepDefinitions {
     public void userClicksSelfGuidedTourInVirtualToursSession() {
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         js.executeScript("window.scrollBy(0,500)");
+        BrowserUtils.wait(2);
         santaBarbaraHousePage.clickSelfGuidedTour();
+        BrowserUtils.wait(2);
 
     }
 
